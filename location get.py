@@ -5,7 +5,7 @@ def get_location(ip=None):
        response = requests.get(url)
        response.raise_for_status()
        data = response.json()
-
+ 
        print(" Location Information:")
        print(f"IP Address : {data.get('ip')}")
        print(f"City       : {data.get('city')}")
@@ -13,6 +13,7 @@ def get_location(ip=None):
        print(f"Country    : {data.get('country')}")
        print(f"Location   : {data.get('loc')}")  # Latitude, Longitude
        print(f"Timezone   : {data.get('timezone')}")
+       print(f"ISP/Org    : {data.get('org')}")
        print(f"ISP/Org    : {data.get('org')}")
 
     except requests.RequestException as e:
